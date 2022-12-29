@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+      box-sizing: border-box;
+      margin: 0px;
+      padding: 0px;
+    }
+    body{
+        min-height: 100vh;
+        background: #06F4FF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .conatainer{
+        position: relative;
+        
+        background:linear-gradient(to right,#f9f9f9,#d9d9d9);
+        width: 300px;
+        height: 350px;
+        border-bottom-left-radius:45% ;
+        border-bottom-right-radius: 45%;
+        
+        z-index: 1000px;
+    }
+    /* .conatainer::before{
+        content: '';
+        position: absolute;
+        right:-100px;
+        top: 30px;
+        width: 250px;
+        height: 200px;
+        background-color: #fff;
+        border-top-right-radius: 40%;
+        border-bottom-right-radius: 55%;
+    }
+    .conatainer::after{
+        content: '';
+        position: absolute;
+        right:-80px;
+        top: 55px;
+        width: 80px;
+        height: 130px;
+        background-color: #06F4FF;
+        border-top-right-radius: 95%;
+        border-bottom-right-radius: 90%;
+    } */
+    .conatainer .box{
+        position: absolute;
+        width:500px;
+        height: 200px;
+        bottom: -50px;
+        z-index: -1;
+        left: 50%;
+        top: 90%;
+        transform: translate(-50%,-50%);
+        background:linear-gradient(to right,#f9f9f9,#d9d9d9);
+        border-top-left-radius:50%;
+        border-bottom-left-radius:50%;
+        border-top-right-radius:50%;
+        border-bottom-right-radius:50%;
+        box-shadow: 0px 0px 10px rgba(50, 50, 5,0.4);
+
+}
+.conatainer .box::after{
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      width:calc(100% - 20px);
+      height: 90%;
+      border-top-left-radius:50%;
+      border-bottom-left-radius:50%;
+      border-top-right-radius:50%;
+      border-bottom-right-radius:50%;
+      background:linear-gradient(to left,#f9f9f9,#d9d9d9)
+}
+.top{
+    position: absolute;
+    top: -40px;
+    width: 100%;
+    height: 80px;
+    background:linear-gradient(to right,#f9f9f9,#d9d9d9);
+    border-radius: 50%;
+
+}
+.circle{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: 94%;
+    height: 70px;
+    background:linear-gradient(to left,#f9f9f9,#d9d9d9);
+    border-radius: 50%;
+    /* border:2px solid red; */
+    overflow: hidden;
+}
+.circle .tea{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    position: absolute;
+    left: 0px;
+    top:30px;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(#c57e65,#e28462);
+    border-radius: 50%;
+    
+}
+ .handle{
+    position: absolute;
+    width: 60%;
+    height:60%;
+    top: 20px;
+    border: 20px solid #fff;
+    right: -85px;
+    border-left:20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-radius:50%;
+    transform: rotate(40deg);
+    z-index: -1;        
+}
+.top .vapour{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+   border: 2px soli red;
+   z-index: 1000;
+}
+span{
+position: relative;
+height: 170%;
+width: 4%;
+top: -40px;
+background-color: #fff;
+/* border: 2px solid red; */
+margin-left:0.2px ;
+border-radius: 50%;
+filter: blur(4px);
+animation: vapour 5s linear infinite;
+opacity: 0;
+animation-delay: calc(var(--i)*0.5s);
+}
+@keyframes vapour{
+    0%{
+       transform: translateY(0px) scaleX(4);
+       opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    50%{
+        transform: translateY(-110px) scaleX(8);
+    }
+    95%{
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(-160px) scaleX(10);
+        opacity: 0;
+    }
+}
+
+
+
+</style>
+<body>
+    <div class="conatainer">
+        <div class="top">
+            <div class="vapour">
+                <span style="--i:1"></span>
+              <span style="--i:2"></span>
+              <span style="--i:4"></span>
+              <span style="--i:2"></span>
+              <span style="--i:1"></span>
+              <span style="--i:1"></span>
+              <span style="--i:3"></span>
+              <span style="--i:4"></span>
+              <span style="--i:6"></span>
+              <span style="--i:0"></span>
+              <span style="--i:1"></span>
+              <span style="--i:2"></span>
+              <span style="--i:3"></span>
+              <span style="--i:4"></span>
+              <span style="--i:5"></span>
+              <span style="--i:6"></span>
+              <span style="--i:7"></span>
+              <span style="--i:6"></span>
+              <span style="--i:4"></span>
+              <span style="--i:5"></span>
+            </div>
+            <div class="circle">
+             <div class="tea">
+              
+            </div>
+           
+            </div>
+            
+        </div>
+        <div class="handle"></div>
+        <div class="box">
+              
+        </div>
+    </div>
+</body>
+</html>
